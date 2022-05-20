@@ -1,0 +1,49 @@
+debug: false
+email:
+  debug: false
+  host: smtp.gmail.com
+  password: your_password
+  port: 587
+  username: your_username
+jwt:
+  expiration: 300
+  header: Authorization
+  secret: SpringBootSecretKey
+liquibase:
+  contexts: prod
+server:
+  compression:
+    enabled: true
+    mime-types: text/html, text/xml, text/plain, text/css, application/javascript,
+      application/json
+  port: 8080
+spring:
+  datasource:
+    hikari:
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+    password: password
+    url: jdbc:postgresql://localhost:5432/mkabumattar
+    username: mkabumattar
+  devtools:
+    restart:
+      enabled: false
+  jpa:
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+  properties:
+    hibernate:
+      format_sql: true
+      jdbc:
+        lob:
+          non_contextual_creation: true
+  show-sql: true
+  sql:
+    init:
+      platform: postgres
