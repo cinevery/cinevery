@@ -15,7 +15,7 @@ import java.util.Collection;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SecurityUtilsUnitTest {
-  
+
   @Test
   public void getCurrentUserLogin() {
     SecurityContext securityContext = SecurityContextHolder.createEmptyContext();
