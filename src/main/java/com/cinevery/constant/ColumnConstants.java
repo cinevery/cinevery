@@ -20,13 +20,13 @@ public class ColumnConstants {
   /**
    * TABLE ROLE
    */
-  public static final String ROLE_ROLES = "ROLES";
+  public static final String ROLE_ROLES = "roles";
   public static final String ROLE_DESCRIPTION = "DESCRIPTION";
 
   /**
    * TABLE AUTHORITY
    */
-  public static final String AUTHORITY_AUTHORITIES = "AUTHORITIES";
+  public static final String AUTHORITY_AUTHORITIES = "authorities";
 
   /**
    * COMMON
