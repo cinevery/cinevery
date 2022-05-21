@@ -1,6 +1,5 @@
 package com.cinevery.model;
 
-
 import com.cinevery.constant.ColumnConstants;
 import com.cinevery.constant.NumberConstants;
 import com.cinevery.constant.TableConstants;

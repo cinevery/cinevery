@@ -1,6 +1,5 @@
 package com.cinevery.security;
 
-import com.cinevery.enumeration.AuthorityName;
 import com.cinevery.exceptions.UserNotActivatedException;
 import com.cinevery.model.User;
 import com.cinevery.repository.UserRepository;
@@ -13,7 +12,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
