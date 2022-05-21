@@ -6,8 +6,16 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +23,8 @@ import java.util.Set;
 @Table(name = TableConstants.ROLE)
 @DynamicInsert
 @DynamicUpdate
-public class Role {
+public class Role implements Serializable {
+  private static final long serialVersionUID = 1L;
 
   @Id
   @Column(name = ColumnConstants.ID)
@@ -29,8 +38,8 @@ public class Role {
   @Column(name = ColumnConstants.ROLE_DESCRIPTION)
   private String description;
 
+  @ManyToMany(mappedBy = ColumnConstants.ROLE_ROLES, cascade = CascadeType.ALL)
   @JsonIgnore
-  @ManyToMany(mappedBy = ColumnConstants.ROLE_ROLES)
   private Set<User> users = new HashSet<>();
 
   public Long getId() {
