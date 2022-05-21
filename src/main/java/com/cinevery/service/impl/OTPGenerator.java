@@ -1,6 +1,7 @@
 package com.cinevery.service.impl;
 
 import com.cinevery.constant.DescriptionConstants;
+import com.cinevery.constant.NumberConstants;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
@@ -13,14 +14,12 @@ import java.util.concurrent.TimeUnit;
 @Description(value = DescriptionConstants.OTP_GENERATOR_Description)
 @Service
 public class OTPGenerator {
-
-  private static final Integer EXPIRE_MIN = 5;
   private final LoadingCache<String, Integer> otpCache;
 
   public OTPGenerator() {
     super();
     CacheBuilder<Object, Object> objectObjectCacheBuilder = CacheBuilder.newBuilder();
-    objectObjectCacheBuilder.expireAfterWrite(EXPIRE_MIN, TimeUnit.MINUTES);
+    objectObjectCacheBuilder.expireAfterWrite(NumberConstants.EXPIRE_MIN, TimeUnit.MINUTES);
     otpCache = objectObjectCacheBuilder
         .build(new CacheLoader<String, Integer>() {
           @Override

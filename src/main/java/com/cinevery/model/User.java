@@ -3,7 +3,6 @@ package com.cinevery.model;
 import com.cinevery.constant.ColumnConstants;
 import com.cinevery.constant.NumberConstants;
 import com.cinevery.constant.TableConstants;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,14 +16,12 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
 @Entity
 @Table(name = TableConstants.USER_INFO)
-public class User implements Serializable {
-  private static final long serialVersionUID = 1L;
+public class User {
 
   @Id
   @Column(name = ColumnConstants.ID)
@@ -66,36 +63,38 @@ public class User implements Serializable {
 
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(
-      name = ColumnConstants.USER_INFO_USER_AUTHORITY,
+      name = TableConstants.USER_AUTHORITY,
       joinColumns = {
           @JoinColumn(
               name = ColumnConstants.USER_INFO_USER_ID,
               referencedColumnName = ColumnConstants.ID
-          )},
+          )
+      },
       inverseJoinColumns = {
           @JoinColumn(
               name = ColumnConstants.USER_INFO_AUTHORITY_NAME,
               referencedColumnName = ColumnConstants.NAME
-          )}
+          )
+      }
   )
   private Set<Authority> authorities;
 
-
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(
-      name = ColumnConstants.USER_INFO_USER_ROLE,
+      name = TableConstants.USER_ROLE,
       joinColumns = {
           @JoinColumn(
               name = ColumnConstants.USER_INFO_USER_ID,
               referencedColumnName = ColumnConstants.ID
-          )},
+          )
+      },
       inverseJoinColumns = {
           @JoinColumn(
               name = ColumnConstants.USER_INFO_ROLE_ID,
               referencedColumnName = ColumnConstants.ID
-          )}
+          )
+      }
   )
-  @JsonIgnore
   private Set<Role> roles;
 
   public Long getId() {

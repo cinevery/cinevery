@@ -11,22 +11,20 @@ public class ColumnConstants {
   public static final String USER_INFO_EMAIL = "EMAIL";
   public static final String USER_INFO_ENABLED = "ENABLED";
   public static final String USER_INFO_LAST_PASSWORD_RESET_DATE = "LAST_PASSWORD_RESET_DATE";
-  public static final String USER_INFO_USER_AUTHORITY = "USER_AUTHORITY";
   public static final String USER_INFO_USER_ID = "USER_ID";
   public static final String USER_INFO_AUTHORITY_NAME = "AUTHORITY_NAME";
-  public static final String USER_INFO_USER_ROLE = "USER_ROLE";
   public static final String USER_INFO_ROLE_ID = "ROLE_ID";
 
   /**
    * TABLE ROLE
    */
-  public static final String ROLE_ROLES = "ROLES";
+  public static final String ROLE_ROLES = "roles";
   public static final String ROLE_DESCRIPTION = "DESCRIPTION";
 
   /**
    * TABLE AUTHORITY
    */
-  public static final String AUTHORITY_AUTHORITIES = "AUTHORITIES";
+  public static final String AUTHORITY_AUTHORITIES = "authorities";
 
   /**
    * COMMON

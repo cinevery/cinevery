@@ -23,11 +23,9 @@ import java.util.Set;
 @Table(name = TableConstants.ROLE)
 @DynamicInsert
 @DynamicUpdate
-public class Role implements Serializable {
-  private static final long serialVersionUID = 1L;
+public class Role {
 
   @Id
-  @Column(name = ColumnConstants.ID)
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
 
@@ -38,8 +36,8 @@ public class Role implements Serializable {
   @Column(name = ColumnConstants.ROLE_DESCRIPTION)
   private String description;
 
-  @ManyToMany(mappedBy = ColumnConstants.ROLE_ROLES, cascade = CascadeType.ALL)
   @JsonIgnore
+  @ManyToMany(mappedBy = ColumnConstants.ROLE_ROLES)
   private Set<User> users = new HashSet<>();
 
   public Long getId() {
