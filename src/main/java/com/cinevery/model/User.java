@@ -63,7 +63,7 @@ public class User {
 
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(
-      name = ColumnConstants.USER_INFO_USER_AUTHORITY,
+      name = TableConstants.USER_AUTHORITY,
       joinColumns = {
           @JoinColumn(
               name = ColumnConstants.USER_INFO_USER_ID,
@@ -81,7 +81,7 @@ public class User {
 
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(
-      name = ColumnConstants.USER_INFO_USER_ROLE,
+      name = TableConstants.USER_ROLE,
       joinColumns = {
           @JoinColumn(
               name = ColumnConstants.USER_INFO_USER_ID,
